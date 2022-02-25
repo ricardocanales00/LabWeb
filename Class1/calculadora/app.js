@@ -1,11 +1,24 @@
 let mateBasica = require('./mate');
 
-console.log(mateBasica.suma(3,4));
+const prompt = require('prompt-sync')();
 
-console.log(mateBasica.producto(2,7));
+const name = prompt('Select Operation (+, -, *, /)');
+const numb1 = prompt('Input number');
+const numb2 = prompt('Input second number');
 
-console.log(mateBasica.resta(5,1));
-
-console.log(mateBasica.division(9,3));
-
-console.log(mateBasica.modulo(7,2));
+switch (name) {
+	case '+':
+  		console.log(mateBasica.suma(numb1,numb2));
+    	break;
+	case '-':
+		console.log(mateBasica.resta(numb1,numb2));
+		break;
+	case '*':
+		console.log(mateBasica.producto(numb1,numb2));
+		break;
+	case '/':
+		console.log(mateBasica.division(numb1,numb2));
+		break;
+  default:
+    console.log(`Sorry, we did not find the operatio: ${name}.`);
+};
