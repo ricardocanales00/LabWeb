@@ -6,18 +6,13 @@
 module.exports = {
 
   development: {
-    client: 'sqlite3',
+    client: 'mysql2',
     connection: {
-      filename: './dev.sqlite3'
-    }
-  },
-
-  staging: {
-    client: 'postgresql',
-    connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
+      host: process.env.DB_DEVELOPMENT_HOST || 'localhost',
+      port: process.env.DB_DEVELOPMENT_PORT || '3306',
+      database: process.env.DB_DEVELOPMENT_NAME || 'mvc',
+      user:  process.env.DB_DEVELOPMENT_USER || 'root',
+      password: process.env.DB_DEVELOPMENT_PASSWORD || '123'
     },
     pool: {
       min: 2,
@@ -27,13 +22,14 @@ module.exports = {
       tableName: 'knex_migrations'
     }
   },
-
   production: {
-    client: 'postgresql',
+    client: 'mysql2',
     connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
+      host: process.env.DB_PRODUCTION_HOST || 'localhost',
+      port: process.env.DB_PRODUCTION_PORT || '3306',
+      database: process.env.DB_PRODUCTION_NAME || 'mvc',
+      user:  process.env.DB_PRODUCTION_USER || 'root',
+      password: process.env.DB_PRODUCTION_PASSWORD || '123'
     },
     pool: {
       min: 2,
@@ -43,5 +39,4 @@ module.exports = {
       tableName: 'knex_migrations'
     }
   }
-
 };
