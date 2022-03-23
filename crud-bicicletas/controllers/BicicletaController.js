@@ -24,3 +24,9 @@ exports.bicicleta_create_post = function(req, res){
     BicicletaModel.add(req.body.color, req.body.modelo, req.body.lat, req.body.lon)
     res.redirect('/bicicletas')
 } 
+
+
+exports.bicicleta_delete_post = function(req, res){
+    BicicletaModel.delete(req.params.id) 
+    res.redirect('/bicicletas')
+}
