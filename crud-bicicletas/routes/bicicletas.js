@@ -14,7 +14,7 @@ router.post('/:id/delete', BicicletaController2.bicicleta_delete_post)
 
 //Update bici
 router.get('/:id/update', BicicletaController2.bicicleta_update_get)
-router.post('/:id/update', BicicletaController.bicicleta_update_post)
+router.post('/:id/update', BicicletaController2.bicicleta_update_post)
 
 
 module.exports = router;

@@ -36,3 +36,11 @@ exports.show = (id) => {
 	.first()
 }
 
+exports.update = (id, color, modelo, lat, long) =>{
+	knex('bicicletas')
+	.update({color, modelo, lat, long})
+	.where({id})
+	.then( function (result) {
+          console.log(' -Update- ');
+       })
+}

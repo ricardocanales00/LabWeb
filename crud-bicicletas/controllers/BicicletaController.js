@@ -40,3 +40,8 @@ exports.bicicleta_update_get = (req, res) => {
       res.render('bicicletas/update', { bici: bicicleta });
     });
 }
+
+exports.bicicleta_update_post = function(req, res){
+	BicicletaModel.update(req.body.id,req.body.color, req.body.modelo, req.body.lat, req.body.lon)
+    res.redirect('/bicicletas')
+}
