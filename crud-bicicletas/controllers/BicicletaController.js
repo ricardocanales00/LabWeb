@@ -16,7 +16,11 @@ exports.homepage = (req, res) => {
     });
 }
 
-// Reglas para la respuesta para la petición "/about"
-exports.about = (req, res) => {
-  res.send('About us');
+exports.bicicleta_create_get = function(req, res){
+    res.render('bicicletas/create')
 }
+
+exports.bicicleta_create_post = function(req, res){
+    BicicletaModel.add(req.body.color, req.body.modelo, req.body.lat, req.body.lon)
+    res.redirect('/bicicletas')
+} 

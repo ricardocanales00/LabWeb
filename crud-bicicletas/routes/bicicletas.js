@@ -6,8 +6,8 @@ let BicicletaController2 = require('../controllers/BicicletaController');
 router.get('/', BicicletaController2.homepage);
 
 //Añadir nueva bicicleta
-router.get('/create', BicicletaController.bicicleta_create_get)
-router.post('/create', BicicletaController.bicicleta_create_post)
+router.get('/create', BicicletaController2.bicicleta_create_get)
+router.post('/create', BicicletaController2.bicicleta_create_post)
 
 //Eliminar bici
 router.post('/:id/delete', BicicletaController.bicicleta_delete_post)
